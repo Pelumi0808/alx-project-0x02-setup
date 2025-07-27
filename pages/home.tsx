@@ -1,8 +1,9 @@
 // pages/home.tsx
 
-import { useState } from 'react';
+import Header from '@/components/layout/Header';
 import Card from '@/components/common/Card';
 import PostModal from '@/components/common/PostModal';
+import { useState } from 'react';
 
 export default function HomePage() {
   const [posts, setPosts] = useState([
@@ -17,17 +18,20 @@ export default function HomePage() {
   };
 
   return (
-    <main>
-      <h1>Home Page</h1>
-      <button onClick={() => setShowModal(true)}>Add New Post</button>
+    <>
+      <Header />
+      <main>
+        <h1>Home Page</h1>
+        <button onClick={() => setShowModal(true)}>Add New Post</button>
 
-      {showModal && (
-        <PostModal onClose={() => setShowModal(false)} onSubmit={handleAddPost} />
-      )}
+        {showModal && (
+          <PostModal onClose={() => setShowModal(false)} onSubmit={handleAddPost} />
+        )}
 
-      {posts.map((post, index) => (
-        <Card key={index} title={post.title} content={post.content} />
-      ))}
-    </main>
+        {posts.map((post, index) => (
+          <Card key={index} title={post.title} content={post.content} />
+        ))}
+      </main>
+    </>
   );
 }
