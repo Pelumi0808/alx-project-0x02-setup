@@ -1,13 +1,18 @@
+// pages/index.tsx
+
 import Head from 'next/head';
+import Header from '../components/layout/Header';
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Welcome | ALX Project</title>
+        <title>ALX Project 0x02 Setup</title>
       </Head>
-      <main className="flex items-center justify-center min-h-screen bg-gray-100">
-        <h1 className="text-4xl font-bold text-blue-600">Welcome to the ALX Next.js Project</h1>
+      <Header />
+      <main className="p-6 text-center">
+        <h1 className="text-3xl font-bold">Welcome to ALX Project 0x02 Setup</h1>
+        <p className="mt-4 text-lg text-gray-600">This is the home page using Pages Router.</p>
       </main>
     </>
   );
