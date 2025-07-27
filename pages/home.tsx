@@ -1,10 +1,13 @@
 // pages/home.tsx
 
+import Card from '@/components/common/Card';
+
 export default function HomePage() {
   return (
-    <main className="p-6 text-center">
-      <h1 className="text-3xl font-bold">Home Page</h1>
-      <p className="mt-4 text-gray-600">Welcome to the Home page.</p>
+    <main>
+      <h1>Home Page</h1>
+      <Card title="Welcome" content="This is the homepage of our project." />
+      <Card title="About the Project" content="This site demonstrates basic Next.js features." />
     </main>
   );
 }
